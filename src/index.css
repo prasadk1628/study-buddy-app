@@ -2,95 +2,97 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Study Buddy Design System - Neon Gradient Theme */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Light Theme - Clean & Bright */
+    --background: 220 20% 97%;
+    --foreground: 240 10% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 240 10% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 240 10% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Purple-Blue Gradient Primary */
+    --primary: 258 80% 62%;
+    --primary-foreground: 0 0% 100%;
+    --primary-start: 258 80% 62%;
+    --primary-mid: 270 75% 70%;
+    --primary-end: 195 100% 66%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Accent Pink */
+    --secondary: 340 85% 70%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 15% 92%;
+    --muted-foreground: 240 5% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 340 85% 70%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Success & Warning */
+    --success: 142 76% 45%;
+    --warning: 38 92% 50%;
+    --fire-badge: 45 100% 75%;
 
-    --radius: 0.5rem;
+    --border: 220 13% 88%;
+    --input: 220 13% 88%;
+    --ring: 258 80% 62%;
 
-    --sidebar-background: 0 0% 98%;
+    --radius: 1rem;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Surface tokens */
+    --surface: 220 20% 97%;
+    --surface-elevated: 0 0% 100%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    /* Dark Theme - Deep Space Neon */
+    --background: 240 30% 8%;
     --foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
+    --card: 240 25% 10%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222.2 84% 4.9%;
+    --popover: 240 25% 10%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Brighter gradients for dark mode */
+    --primary: 258 85% 65%;
+    --primary-foreground: 240 30% 8%;
+    --primary-start: 258 85% 65%;
+    --primary-mid: 270 80% 72%;
+    --primary-end: 195 100% 68%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 340 90% 72%;
+    --secondary-foreground: 240 30% 8%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 240 20% 18%;
+    --muted-foreground: 220 15% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 340 90% 72%;
+    --accent-foreground: 240 30% 8%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --success: 142 76% 50%;
+    --warning: 38 92% 55%;
+    --fire-badge: 45 100% 65%;
+
+    --border: 240 20% 18%;
+    --input: 240 20% 18%;
+    --ring: 258 85% 65%;
+
+    /* Surface tokens */
+    --surface: 240 30% 8%;
+    --surface-elevated: 240 25% 12%;
   }
 }
 
@@ -100,6 +102,101 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Gradient Utilities */
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--primary-start)), hsl(var(--primary-end)));
+  }
+
+  .gradient-primary-intense {
+    background: linear-gradient(135deg, hsl(var(--primary-start)), hsl(var(--primary-mid)), hsl(var(--primary-end)));
+  }
+
+  .text-gradient-primary {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--primary-start)), hsl(var(--primary-end)));
+  }
+
+  /* Card Styles */
+  .card-elevated {
+    @apply bg-card rounded-2xl shadow-lg border border-border/50 backdrop-blur-sm;
+  }
+
+  .card-glow {
+    @apply card-elevated relative;
+    box-shadow: 0 8px 32px -8px hsl(var(--primary) / 0.2);
+  }
+
+  /* Badge Styles */
+  .badge-fire {
+    @apply inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-sm font-semibold;
+    background: linear-gradient(135deg, hsl(var(--fire-badge)), hsl(var(--warning)));
+    color: hsl(var(--foreground));
+  }
+
+  .badge-success {
+    @apply bg-success/10 text-success border border-success/20 px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  /* Progress Bar */
+  .progress-xp {
+    @apply h-3 rounded-full overflow-hidden bg-muted;
+  }
+
+  .progress-xp-fill {
+    @apply h-full gradient-primary transition-all duration-700 ease-out;
+  }
+
+  /* Animations */
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.4);
+    }
+    50% {
+      box-shadow: 0 0 30px hsl(var(--primary) / 0.6);
+    }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes level-up {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .animate-level-up {
+    animation: level-up 0.6s ease-in-out;
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.4s ease-out;
   }
 }
