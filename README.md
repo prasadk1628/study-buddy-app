@@ -294,4 +294,5 @@ This is an educational project. Feel free to fork, modify, and make it your own!
 
 ---
 
+
 Built with ❤️ using React, TypeScript, Tailwind CSS, and Capacitor
