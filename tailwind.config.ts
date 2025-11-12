@@ -13,6 +13,11 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+        serif: ["Georgia", "ui-serif", "serif"],
+        mono: ["Menlo", "Monaco", "Courier New", "monospace"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -22,9 +27,6 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
-          start: "hsl(var(--primary-start))",
-          mid: "hsl(var(--primary-mid))",
-          end: "hsl(var(--primary-end))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -54,6 +56,13 @@ export default {
         warning: "hsl(var(--warning))",
         surface: "hsl(var(--surface))",
         "surface-elevated": "hsl(var(--surface-elevated))",
+        chart: {
+          "1": "hsl(var(--chart-1))",
+          "2": "hsl(var(--chart-2))",
+          "3": "hsl(var(--chart-3))",
+          "4": "hsl(var(--chart-4))",
+          "5": "hsl(var(--chart-5))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

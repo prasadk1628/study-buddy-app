@@ -6,93 +6,102 @@
 
 @layer base {
   :root {
-    /* Light Theme - Clean & Bright */
-    --background: 220 20% 97%;
-    --foreground: 240 10% 15%;
+    /* Light Theme - Custom Design System */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 13%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 15%;
+    --card: 0 0% 96%;
+    --card-foreground: 0 0% 13%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 15%;
+    --popover: 0 0% 92%;
+    --popover-foreground: 0 0% 13%;
 
-    /* Purple-Blue Gradient Primary */
-    --primary: 258 80% 62%;
-    --primary-foreground: 0 0% 100%;
-    --primary-start: 258 80% 62%;
-    --primary-mid: 270 75% 70%;
-    --primary-end: 195 100% 66%;
+    /* Primary - Purple */
+    --primary: 258 100% 65%;
+    --primary-foreground: 0 0% 98%;
 
-    /* Accent Pink */
-    --secondary: 340 85% 70%;
-    --secondary-foreground: 0 0% 100%;
+    /* Secondary */
+    --secondary: 0 0% 88%;
+    --secondary-foreground: 0 0% 13%;
 
-    --muted: 220 15% 92%;
-    --muted-foreground: 240 5% 45%;
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 340 85% 70%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 0 2% 86%;
+    --accent-foreground: 0 0% 13%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 82% 59%;
+    --destructive-foreground: 0 0% 98%;
 
     /* Success & Warning */
-    --success: 142 76% 45%;
-    --warning: 38 92% 50%;
-    --fire-badge: 45 100% 75%;
+    --success: 143 74% 36%;
+    --warning: 46 94% 46%;
+    --fire-badge: 46 94% 46%;
 
-    --border: 220 13% 88%;
-    --input: 220 13% 88%;
-    --ring: 258 80% 62%;
+    --border: 0 0% 88%;
+    --input: 0 0% 75%;
+    --ring: 258 100% 65%;
 
-    --radius: 1rem;
+    --radius: 0.5rem;
 
     /* Surface tokens */
-    --surface: 220 20% 97%;
-    --surface-elevated: 0 0% 100%;
+    --surface: 0 0% 98%;
+    --surface-elevated: 0 0% 96%;
+
+    /* Chart colors */
+    --chart-1: 258 100% 55%;
+    --chart-2: 143 74% 36%;
+    --chart-3: 46 94% 46%;
+    --chart-4: 198 100% 45%;
+    --chart-5: 320 85% 54%;
   }
 
   .dark {
-    /* Dark Theme - Deep Space Neon */
-    --background: 240 30% 8%;
-    --foreground: 210 40% 98%;
+    /* Dark Theme - Custom Design System */
+    --background: 0 0% 13%;
+    --foreground: 0 0% 98%;
 
-    --card: 240 25% 10%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 16%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 240 25% 10%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 18%;
+    --popover-foreground: 0 0% 98%;
 
-    /* Brighter gradients for dark mode */
-    --primary: 258 85% 65%;
-    --primary-foreground: 240 30% 8%;
-    --primary-start: 258 85% 65%;
-    --primary-mid: 270 80% 72%;
-    --primary-end: 195 100% 68%;
+    /* Primary - Purple */
+    --primary: 258 100% 65%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 340 90% 72%;
-    --secondary-foreground: 240 30% 8%;
+    /* Secondary */
+    --secondary: 0 0% 25%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 240 20% 18%;
-    --muted-foreground: 220 15% 65%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 55%;
 
-    --accent: 340 90% 72%;
-    --accent-foreground: 240 30% 8%;
+    --accent: 0 0% 22%;
+    --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 82% 59%;
+    --destructive-foreground: 0 0% 98%;
 
-    --success: 142 76% 50%;
-    --warning: 38 92% 55%;
-    --fire-badge: 45 100% 65%;
+    --success: 143 74% 40%;
+    --warning: 46 94% 50%;
+    --fire-badge: 46 94% 50%;
 
-    --border: 240 20% 18%;
-    --input: 240 20% 18%;
-    --ring: 258 85% 65%;
+    --border: 0 0% 25%;
+    --input: 0 0% 30%;
+    --ring: 258 100% 65%;
 
     /* Surface tokens */
-    --surface: 240 30% 8%;
-    --surface-elevated: 240 25% 12%;
+    --surface: 0 0% 13%;
+    --surface-elevated: 0 0% 18%;
+
+    /* Chart colors */
+    --chart-1: 258 100% 60%;
+    --chart-2: 143 74% 40%;
+    --chart-3: 46 94% 50%;
+    --chart-4: 198 100% 50%;
+    --chart-5: 320 85% 58%;
   }
 }
 
@@ -113,16 +122,12 @@
 @layer components {
   /* Gradient Utilities */
   .gradient-primary {
-    background: linear-gradient(135deg, hsl(var(--primary-start)), hsl(var(--primary-end)));
-  }
-
-  .gradient-primary-intense {
-    background: linear-gradient(135deg, hsl(var(--primary-start)), hsl(var(--primary-mid)), hsl(var(--primary-end)));
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--chart-1)));
   }
 
   .text-gradient-primary {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(var(--primary-start)), hsl(var(--primary-end)));
+    background-image: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--chart-1)));
   }
 
   /* Card Styles */
