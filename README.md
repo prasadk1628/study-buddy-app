@@ -111,12 +111,17 @@ The application combines **data collection + behavioral analytics + gamification
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/e5e693b5-bd0b-4c2a-aa8a-b0bd18b10c20" width="300"/>
-  <img src="https://github.com/user-attachments/assets/1f08524a-4f38-4377-8405-031c3244d92d" width="300"/>
+  <img src="![](<SmartSelect_20251208-212809_Study Buddy.jpg>)" width="300"/>
 </p>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/28c2b34d-677a-489c-8ef3-2643da5711a6" width="300"/>
-  <img src="ttps://github.com/user-attachments/assets/90fc761d-acf7-46ed-b407-a619914a7277" width="300"/>
+  <img src="![alt text](<SmartSelect_20251208-212845_Study Buddy.jpg>)" width="300"/>
+  <img src="![alt text](<SmartSelect_20251208-212859_Study Buddy.jpg>)" width="300"/>
+</p>
+
+<p align="center">
+  <img src="![alt text](<SmartSelect_20251208-212910_Study Buddy.jpg>)" width="300"/>
+ 
 </p>
 
 Suggested visuals:
