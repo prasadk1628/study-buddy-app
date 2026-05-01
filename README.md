@@ -22,6 +22,13 @@ This system collects and analyzes study data to provide actionable insights on l
 - 💾 **Offline-First**: All data stored locally with localStorage
 - 📤 **Import/Export**: CSV support for backing up and migrating data
 
+## 📈 Key Insights (Sample)
+
+- Most study sessions occur in the evening (6–10 PM)
+- Math consumes 2x more time than other subjects
+- Users with 5+ day streaks show higher total study time
+- Drop in activity observed after weekends
+
 ## Tech Stack
 
 - **React 18** with TypeScript
