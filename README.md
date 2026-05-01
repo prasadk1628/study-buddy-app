@@ -1,6 +1,15 @@
-# Study Buddy 📚✨
+# Study Buddy Analytics System 📊
 
-A gamified study tracking app that helps you level up your learning! Track study sessions, earn XP, maintain streaks, unlock achievements, and set weekly goals—all offline-first with localStorage.
+A data-driven study tracking system that analyzes student learning behavior using session data, productivity patterns, and performance metrics.
+
+## Problem
+Students track study time but lack insights into:
+- productivity patterns
+- subject difficulty
+- consistency trends
+
+## Solution
+This system collects and analyzes study data to provide actionable insights on learning behavior.
 
 ## Features
 
