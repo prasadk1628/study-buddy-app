@@ -1,6 +1,7 @@
 import { UserStats } from '@/types';
 import { formatDuration } from '@/utils/dateHelpers';
 import { TrendingUp, Target, Clock, Zap } from 'lucide-react';
+import AnalyticsDashboard from "./AnalyticsDashboard";
 
 interface DashboardProps {
   stats: UserStats;
@@ -102,6 +103,9 @@ export const Dashboard = ({ stats, weeklyProgress }: DashboardProps) => {
           </div>
           <div className="text-2xl font-bold">{stats.streak} days</div>
         </div>
+      </div>
+      <div className="space-y-6">
+        <AnalyticsDashboard />
       </div>
     </div>
   );
