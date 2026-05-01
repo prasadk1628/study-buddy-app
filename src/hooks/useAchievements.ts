@@ -64,53 +64,59 @@ const PREDEFINED_ACHIEVEMENTS: Omit<Achievement, 'unlocked' | 'unlockedAt'>[] = 
 export const useAchievements = (stats: UserStats, sessions: Session[]) => {
   const [achievements, setAchievements] = useState<Achievement[]>([]);
 
+  // 🔹 Initialize from storage
   useEffect(() => {
-    const savedAchievements = storage.get<Achievement[]>(STORAGE_KEYS.ACHIEVEMENTS);
-    if (savedAchievements) {
-      setAchievements(savedAchievements);
+    const saved = storage.get<Achievement[]>(STORAGE_KEYS.ACHIEVEMENTS);
+
+    if (saved) {
+      setAchievements(saved);
     } else {
-      // Initialize with predefined achievements
-      const initialAchievements: Achievement[] = PREDEFINED_ACHIEVEMENTS.map(a => ({
+      const initial: Achievement[] = PREDEFINED_ACHIEVEMENTS.map(a => ({
         ...a,
         unlocked: false,
       }));
-      setAchievements(initialAchievements);
-      storage.set(STORAGE_KEYS.ACHIEVEMENTS, initialAchievements);
+
+      setAchievements(initial);
+      storage.set(STORAGE_KEYS.ACHIEVEMENTS, initial);
     }
   }, []);
 
+  // 🔹 Core unlock logic
   const checkAchievements = useCallback((): Achievement[] => {
+    if (!achievements.length) return [];
+
     const newlyUnlocked: Achievement[] = [];
 
-    const updatedAchievements = achievements.map(achievement => {
+    const updated = achievements.map((achievement) => {
       if (achievement.unlocked) return achievement;
 
-      let shouldUnlock = false;
+      let current = 0;
 
       switch (achievement.requirement.type) {
         case 'sessions':
-          shouldUnlock = sessions.length >= achievement.requirement.value;
+          current = sessions.length;
           break;
         case 'streak':
-          shouldUnlock = stats.streak >= achievement.requirement.value;
+          current = stats.streak;
           break;
         case 'level':
-          shouldUnlock = stats.level >= achievement.requirement.value;
+          current = stats.level;
           break;
         case 'xp':
-          shouldUnlock = stats.totalXP >= achievement.requirement.value;
+          current = stats.totalXP;
           break;
         case 'time':
-          shouldUnlock = stats.totalStudyTime >= achievement.requirement.value;
+          current = stats.totalStudyTime;
           break;
       }
 
-      if (shouldUnlock) {
+      if (current >= achievement.requirement.value) {
         const unlockedAchievement = {
           ...achievement,
           unlocked: true,
-          unlockedAt: new Date().toISOString(),
+          unlockedAt: achievement.unlockedAt || new Date().toISOString(),
         };
+
         newlyUnlocked.push(unlockedAchievement);
         return unlockedAchievement;
       }
@@ -118,13 +124,21 @@ export const useAchievements = (stats: UserStats, sessions: Session[]) => {
       return achievement;
     });
 
-    setAchievements(updatedAchievements);
-    storage.set(STORAGE_KEYS.ACHIEVEMENTS, updatedAchievements);
+    setAchievements(updated);
+    storage.set(STORAGE_KEYS.ACHIEVEMENTS, updated);
 
     return newlyUnlocked;
   }, [achievements, stats, sessions]);
 
-  const getUnlockedCount = useCallback((): number => {
+  // 🔥 AUTO TRIGGER (important fix)
+  useEffect(() => {
+    if (achievements.length > 0) {
+      checkAchievements();
+    }
+  }, [stats, sessions]);
+
+  // 🔹 Helpers
+  const getUnlockedCount = useCallback(() => {
     return achievements.filter(a => a.unlocked).length;
   }, [achievements]);
 

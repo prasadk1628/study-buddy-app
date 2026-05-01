@@ -69,9 +69,11 @@ const sessionsTrend = Object.entries(sessionsPerDay).map(([date, count]) => ({
 }));
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-6">
 
-      {/* Bar Chart */}
+      <div className="card-elevated p-5">
+  <h3 className="text-lg font-semibold mb-3">Study Time by Subject</h3>
+  {/* Bar Chart */}
       <div>
         <h2 className="text-lg font-bold mb-2">Study Time by Subject</h2>
         <BarChart width={700} height={350} data={subjectData}>
@@ -85,8 +87,15 @@ const sessionsTrend = Object.entries(sessionsPerDay).map(([date, count]) => ({
         <p>
             Most studied subject: {subjectData[0]?.subject}
         </p>
-      {/* Line Chart */}
-      <div>
+</div>
+
+      
+      
+
+      <div className="card-elevated p-5">
+  <h3 className="text-lg font-semibold mb-3">Study Time by Subject</h3>
+   {/* Line Chart */}
+   <div>
         <h2 className="text-lg font-bold mb-2">XP Growth Over Time</h2>
         <LineChart width={700} height={350} data={xpData}>
           <CartesianGrid strokeDasharray="3 3" />
@@ -96,16 +105,22 @@ const sessionsTrend = Object.entries(sessionsPerDay).map(([date, count]) => ({
           <Line type="monotone" dataKey="xp" />
         </LineChart>
       </div>
+</div>
+
+     
       
-      <div className="mt-6 space-y-2 text-sm">
-          <p><b>Total Study Time:</b> {totalStudyTime} minutes</p>
-          <p><b>Average Session:</b> {avgSessionTime} minutes</p>
-          <p><b>Top Subject:</b> {topSubject}</p>
-          <p><b>Active Study Days:</b> {studyDays}</p>
-          <p><b>Consistency Score:</b> {consistencyScore}%</p>
-          <p><b>Most Active Day:</b> {mostActiveDay}</p>
-          <p><b>Max Sessions in a Day:</b> {maxSessions}</p>
-      </div>
+     <div className="card-elevated p-5 space-y-3">
+        <h3 className="text-lg font-semibold">Key Insights</h3>
+
+        <div className="grid grid-cols-2 gap-4">
+  <div>Total Time<br /><b>{totalStudyTime} min</b></div>
+  <div>Avg Session<br /><b>{avgSessionTime} min</b></div>
+  <div>Top Subject<br /><b>{topSubject}</b></div>
+  <div>Active Days<br /><b>{studyDays}</b></div>
+  <div>Consistency<br /><b>{consistencyScore}%</b></div>
+  <div>Most Active<br /><b>{mostActiveDay}</b></div>
+</div>
+      </div>  
 
     </div>
   );
