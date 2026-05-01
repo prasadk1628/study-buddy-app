@@ -1,183 +1,145 @@
 # Study Behavior Analytics System 📊
 
-A data-driven study tracking system that analyzes student learning patterns using session data, productivity trends, and consistency metrics.
+A data-driven, gamified study tracking application that analyzes user learning patterns and improves consistency through behavioral insights and achievements.
 
 ---
 
-## 🚨 Problem
+## Overview
 
-Most students track study time, but they don’t understand:
-
-* When they are most productive
-* Which subjects consume the most effort
-* How consistency (streaks) impacts performance
-
-Without insights, tracking alone has **low value**.
+This application allows users to log study sessions and transforms raw activity data into meaningful insights. It combines analytics with gamification to encourage consistent learning behavior.
 
 ---
 
-## ✅ Solution
+## 🧠 Key Features
 
-This system collects structured study session data and transforms it into meaningful metrics such as:
+- **Study Session Tracking**
+  - Log subject, duration, and date
+  - Persistent data storage using localStorage
 
-* Productivity trends over time
-* Subject-wise effort distribution
-* Consistency patterns (streak analysis)
-* Goal tracking vs actual performance
+- **Behavioral Analytics**
+  - Total study time
+  - Average session duration
+  - Study frequency and trends
+  - Consistency score
+  - Subject-wise time distribution
+  - Most active study day
 
-The application combines **data collection + behavioral analytics + gamification** to improve learning efficiency.
+- **Achievement System**
+  - Rule-based unlocking system
+  - Supports multiple conditions:
+    - XP milestones
+    - streak tracking
+    - total study time
+    - session count
+    - consistency score
+    - long-session detection
+    - subject specialization
+  - Real-time progress tracking
 
----
+- **Gamification Layer**
+  - XP-based level progression
+  - Streak tracking
+  - Achievement rewards
+  - Progress visualization
 
-## 🧠 Key Insights (Derived from Study Data)
-
-* Evening hours (6–10 PM) show peak study activity
-* Subjects like Mathematics require significantly more time than others
-* Users maintaining streaks >5 days demonstrate higher total study time
-* Study activity drops noticeably after weekends
-
-👉 These insights help students **optimize study schedules and improve consistency**
-
----
-
-## 📊 Features
-
-### 📈 Data Tracking
-
-* Logs study sessions (subject, duration, date)
-* Tracks total study time and XP
-
-### 🔥 Behavioral Analytics
-
-* Daily streak calculation
-* Weekly goal tracking
-* Performance trends
-
-### 🎮 Gamification Layer
-
-* XP system (1 XP per minute)
-* Level progression (1000 XP per level)
-* Achievement system (8 milestones)
-
-### 💾 Data Management
-
-* Offline-first storage using localStorage
-* CSV import/export for data portability
-
-### 📱 Cross-Platform
-
-* Web app (React + Vite)
-* Mobile-ready via Capacitor (Android/iOS)
+- **Data Visualization**
+  - Bar charts (subject vs time)
+  - Line charts (progress over time)
+  - Real-time insights dashboard
 
 ---
 
-## 📊 Data Model
+## Tech Stack
 
-### Study Session
-
-```ts
-{
-  subject: string;
-  duration: number;   // minutes
-  date: string;
-  xpEarned: number;
-}
-```
-
-### User Metrics
-
-```ts
-{
-  totalXP: number;
-  level: number;
-  totalStudyTime: number;
-  streak: number;
-}
-```
+- **Frontend:** React, TypeScript  
+- **Visualization:** Recharts  
+- **State Management:** Custom React Hooks  
+- **Storage:** localStorage  
+- **Styling:** Tailwind CSS  
 
 ---
 
-## 📈 Analytics Opportunities (Future Enhancements)
+## Project Structure
+src/
+├── components/ # UI components
+├── hooks/ # core logic (sessions, stats, achievements)
+├── pages/ # main views
+├── utils/ # helper functions
+├── types/ # TypeScript types
 
-* Subject difficulty analysis
-* Productivity heatmaps (time-of-day trends)
-* Weekly performance comparison
-* Consistency scoring system
-* Predictive study recommendations
 
 ---
 
-## 🖼️ Dashboard Preview
+## How It Works
+
+1. User logs study sessions  
+2. Data is stored locally  
+3. Metrics are computed dynamically  
+4. Achievement conditions are evaluated  
+5. Insights are displayed through charts and summaries  
+
+---
+
+
+
+## Example Insights
+
+- Study consistency percentage  
+- Subject dominance patterns  
+- Daily activity trends  
+- Performance growth over time  
+
+---
+
+## Analytics Extension (Python)
+
+The project includes a Python script for deeper analysis:
+
+analytics_dashboard.py
+
+Used for:
+- Data aggregation using pandas  
+- Additional offline analysis  
+- Extending insights beyond frontend  
+
+---
+
+## Live Demo
+
+Deployed using netlify.app
+👉 studybehavioranalyticssystem.netlify.app
+
+---
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/e5e693b5-bd0b-4c2a-aa8a-b0bd18b10c20" width="300"/>
-  <img src="SmartSelect_20251208-212809_Study Buddy.jpg" width="300"/>
+  <img src="assests/SmartSelect_20251208-212910_Study Buddy.jpg"width = "300"/>
 </p>
 
 <p align="center">
-  <img src="SmartSelect_20251208-212845_Study Buddy.jpg" width="300"/>
-  <img src="SmartSelect_20251208-212859_Study Buddy.jpg" width="300"/>
+  <img src="assests/SmartSelect_20251208-212845_Study Buddy.jpg" width="300"/>
+  <img src="assests/SmartSelect_20251208-212859_Study Buddy.jpg" width="300"/>
 </p>
 
-<p align="center">
-  <img src="SmartSelect_20251208-212910_Study Buddy.jpg" width="300"/>
- 
-</p>
 
-Suggested visuals:
 
-* Study time by subject (bar chart)
-* XP growth over time (line chart)
-* Weekly progress vs goal
-* Streak trend
+## Future Improvements
+
+- Timestamp-based analysis (hour-level insights)  
+- Cloud database integration (Supabase)  
+- Predictive analytics and recommendations  
+- Multi-user support  
 
 ---
 
-## ⚙️ Tech Stack
+## Key Takeaways
 
-* React 18 + TypeScript
-* Tailwind CSS
-* Capacitor (mobile support)
-* localStorage (offline persistence)
-* Vite
+- Designed a modular achievement engine with dynamic rule evaluation  
+- Implemented behavioral analytics using real-time data  
+- Combined data insights with gamification to improve engagement  
 
 ---
 
-## 🚀 Getting Started
+## Author
 
-```bash
-npm install
-npm run dev
-```
-
----
-
-## 🎯 Why This Project Matters
-
-This project goes beyond a simple tracking app by introducing:
-
-* **Data-driven decision making**
-* **Behavioral pattern analysis**
-* **User productivity insights**
-
-It demonstrates the ability to:
-
-✔ Collect structured data
-✔ Transform it into meaningful metrics
-✔ Derive actionable insights
-
----
-
-## 📌 Future Scope
-
-* Streamlit / Power BI analytics dashboard
-* Cloud database integration
-* Multi-user analytics
-* AI-based study recommendations
-
----
-
-## 📬 Contact
-
-* GitHub: https://github.com/prasadk1628
-* Linkedin:https://www.linkedin.com/in/vara-prasad-k-4a6026230/
+Prasad
