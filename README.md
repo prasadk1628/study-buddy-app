@@ -109,11 +109,22 @@ The application combines **data collection + behavioral analytics + gamification
 
 ## 🖼️ Dashboard Preview
 
-<img width="1080" height="2310" alt="SmartSelect_20251208-212741_Study Buddy" src="https://github.com/user-attachments/assets/e5e693b5-bd0b-4c2a-aa8a-b0bd18b10c20" />
-<img width="1080" height="2297" alt="SmartSelect_20251208-212809_Study Buddy" src="https://github.com/user-attachments/assets/1f08524a-4f38-4377-8405-031c3244d92d" />
-<img width="1080" height="2314" alt="SmartSelect_20251208-212859_Study Buddy" src="https://github.com/user-attachments/assets/e5a5f47f-4d78-4b0c-a105-0029a7058c31" />
-<img width="1080" height="2314" alt="SmartSelect_20251208-212845_Study Buddy" src="https://github.com/user-attachments/assets/90fc761d-acf7-46ed-b407-a619914a7277" />
-<img width="1080" height="2308" alt="SmartSelect_20251208-212910_Study Buddy" src="https://github.com/user-attachments/assets/28c2b34d-677a-489c-8ef3-2643da5711a6" />
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e5e693b5-bd0b-4c2a-aa8a-b0bd18b10c20" width="300"/>
+  <img src="https://github.com/user-attachments/assets/1f08524a-4f38-4377-8405-031c3244d92d" width="300"/>
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/1f08524a-4f38-4377-8405-031c3244d92d" width="300"/>
+  <img src="ttps://github.com/user-attachments/assets/90fc761d-acf7-46ed-b407-a619914a7277" width="300"/>
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/28c2b34d-677a-489c-8ef3-2643da5711a6"/>
+ 
+</p>
+
+
 
 Suggested visuals:
 
