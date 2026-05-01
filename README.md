@@ -180,4 +180,4 @@ It demonstrates the ability to:
 ## 📬 Contact
 
 * GitHub: https://github.com/prasadk1628
-* https://www.linkedin.com/in/vara-prasad-k-4a6026230/
+* Linkedin:https://www.linkedin.com/in/vara-prasad-k-4a6026230/
