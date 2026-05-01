@@ -11,12 +11,11 @@ import { AchievementUnlockModal } from '@/components/AchievementUnlockModal';
 import { useStudyStats } from '@/hooks/useStudyStats';
 import { useSessions } from '@/hooks/useSessions';
 import { useGoals } from '@/hooks/useGoals';
-import { useAchievements } from '@/hooks/useAchievements';
 import { useTheme } from '@/hooks/useTheme';
 import { Achievement } from '@/types';
 import { Sparkles } from 'lucide-react';
 import { useAchievements } from "@/hooks/useAchievements";
-import { AchievementUnlockModal } from "@/components/AchievementUnlockModal";
+
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState('dashboard');

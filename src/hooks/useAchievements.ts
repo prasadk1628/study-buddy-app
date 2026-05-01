@@ -59,19 +59,42 @@ const PREDEFINED_ACHIEVEMENTS: Omit<Achievement, 'unlocked' | 'unlockedAt'>[] = 
     icon: '🎓',
     requirement: { type: 'sessions', value: 50 },
   },
+
+  // 🔥 Advanced Achievements
+  {
+    id: 'consistency_80',
+    name: 'Consistency Master',
+    description: 'Maintain 80% study consistency',
+    icon: '📈',
+    requirement: { type: 'consistency', value: 80 },
+  },
+  {
+    id: 'long_session',
+    name: 'Deep Focus',
+    description: 'Complete a session longer than 120 minutes',
+    icon: '🧠',
+    requirement: { type: 'long_session', value: 120 },
+  },
+  {
+    id: 'subject_300',
+    name: 'Subject Specialist',
+    description: 'Spend 300 minutes on a single subject',
+    icon: '📊',
+    requirement: { type: 'subject_time', value: 300 },
+  },
 ];
 
 export const useAchievements = (stats: UserStats, sessions: Session[]) => {
   const [achievements, setAchievements] = useState<Achievement[]>([]);
 
-  // 🔹 Initialize from storage
+  // Initialize
   useEffect(() => {
     const saved = storage.get<Achievement[]>(STORAGE_KEYS.ACHIEVEMENTS);
 
-    if (saved) {
+    if (saved && saved.length > 0) {
       setAchievements(saved);
     } else {
-      const initial: Achievement[] = PREDEFINED_ACHIEVEMENTS.map(a => ({
+      const initial = PREDEFINED_ACHIEVEMENTS.map(a => ({
         ...a,
         unlocked: false,
       }));
@@ -81,7 +104,7 @@ export const useAchievements = (stats: UserStats, sessions: Session[]) => {
     }
   }, []);
 
-  // 🔹 Core unlock logic
+  // 🔥 Core logic
   const checkAchievements = useCallback((): Achievement[] => {
     if (!achievements.length) return [];
 
@@ -96,17 +119,40 @@ export const useAchievements = (stats: UserStats, sessions: Session[]) => {
         case 'sessions':
           current = sessions.length;
           break;
+
         case 'streak':
           current = stats.streak;
           break;
+
         case 'level':
           current = stats.level;
           break;
+
         case 'xp':
           current = stats.totalXP;
           break;
+
         case 'time':
           current = stats.totalStudyTime;
+          break;
+
+        case 'consistency':
+          const uniqueDays = new Set(sessions.map(s => s.date)).size;
+          current = sessions.length
+            ? Math.round((uniqueDays / sessions.length) * 100)
+            : 0;
+          break;
+
+        case 'long_session':
+          current = Math.max(...sessions.map(s => s.duration), 0);
+          break;
+
+        case 'subject_time':
+          const subjectMap: Record<string, number> = {};
+          sessions.forEach(s => {
+            subjectMap[s.subject] = (subjectMap[s.subject] || 0) + s.duration;
+          });
+          current = Math.max(...Object.values(subjectMap), 0);
           break;
       }
 
@@ -130,14 +176,13 @@ export const useAchievements = (stats: UserStats, sessions: Session[]) => {
     return newlyUnlocked;
   }, [achievements, stats, sessions]);
 
-  // 🔥 AUTO TRIGGER (important fix)
+  // Auto trigger
   useEffect(() => {
     if (achievements.length > 0) {
       checkAchievements();
     }
   }, [stats, sessions]);
 
-  // 🔹 Helpers
   const getUnlockedCount = useCallback(() => {
     return achievements.filter(a => a.unlocked).length;
   }, [achievements]);
@@ -152,17 +197,40 @@ export const useAchievements = (stats: UserStats, sessions: Session[]) => {
       case 'sessions':
         current = sessions.length;
         break;
+
       case 'streak':
         current = stats.streak;
         break;
+
       case 'level':
         current = stats.level;
         break;
+
       case 'xp':
         current = stats.totalXP;
         break;
+
       case 'time':
         current = stats.totalStudyTime;
+        break;
+
+      case 'consistency':
+        const uniqueDays = new Set(sessions.map(s => s.date)).size;
+        current = sessions.length
+          ? Math.round((uniqueDays / sessions.length) * 100)
+          : 0;
+        break;
+
+      case 'long_session':
+        current = Math.max(...sessions.map(s => s.duration), 0);
+        break;
+
+      case 'subject_time':
+        const subjectTotals: Record<string, number> = {};
+        sessions.forEach(s => {
+          subjectTotals[s.subject] = (subjectTotals[s.subject] || 0) + s.duration;
+        });
+        current = Math.max(...Object.values(subjectTotals), 0);
         break;
     }
 
