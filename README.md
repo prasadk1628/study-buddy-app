@@ -115,7 +115,7 @@ The application combines **data collection + behavioral analytics + gamification
 </p>
 
 <p align="center">
-  <img src="SmartSelect_20251208-212845_Study Buddy.jpg>" width="300"/>
+  <img src="SmartSelect_20251208-212845_Study Buddy.jpg" width="300"/>
   <img src="SmartSelect_20251208-212859_Study Buddy.jpg" width="300"/>
 </p>
 
