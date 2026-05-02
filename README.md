@@ -1,4 +1,4 @@
-# 📊 Study Behavior Analytics System
+# 📊 StudyLens — Study Behavior Analytics System
 
 > *Most study apps just track time. This one analyzes behavior.*
 
